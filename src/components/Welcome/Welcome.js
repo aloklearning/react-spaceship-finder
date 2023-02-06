@@ -26,7 +26,7 @@ const Welcome = () => {
             </div>
             
             <div className='content-container'>
-                <h1>Finding Spacecraft for MrZ</h1>
+                <h1>Finding Spacecraft for Mr Little Z</h1>
                 
                 <p className='sub-header'>
                 Mr Little Z has multiple spaceships in his spaceport, and he finds it hard to keep track of them.

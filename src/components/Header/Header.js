@@ -5,8 +5,14 @@ import { ReactComponent as HeaderLogo } from '../../assets/rocket_launch.svg';
 const Header = () => {
     return (
         <div className="header-container">
-            <HeaderLogo stroke='white' fill='white' />
-            <p className="header-text">Spaceship Finder</p>
+            <div className='left-container'>
+                <HeaderLogo stroke='white' fill='white' />
+                <p className="header-text">Spaceship Finder</p>
+            </div>
+
+            <div className='right-container'>
+                <div className='btn'>Home</div>
+            </div>
         </div>
     )
 }
