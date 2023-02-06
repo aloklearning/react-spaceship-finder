@@ -2,7 +2,7 @@ import './SpaceShipItem.css';
 import { useState } from 'react';
 
 import { ReactComponent as ArrowUp } from '../../assets/arrow_up.svg';
-import { ReactComponent as Rocket } from '../../assets/rocket_launch.svg';
+import { ReactComponent as Rocket } from '../../assets/rocket.svg';
 import { ReactComponent as ArrowDown } from '../../assets/arrow_down.svg';
 
 const SpaceShipItem = ({ item }) => {
