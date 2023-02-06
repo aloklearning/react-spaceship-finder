@@ -1,13 +1,14 @@
 .header-container {
-    width: 100%;
     display: flex;
     position: fixed;
     padding: 20px 5%;
     background-color: #212133;
     justify-content: space-between;
+    width: -webkit-fill-available;
     box-shadow: 0 4px 6px rgb(0 0 0 / 25%);
 }
 
+.header-btn { padding: 5px 10px; font-size: 15px; }
 .left-container { display: flex; align-items: center; }
 .right-container { display: inline; }
 
@@ -20,5 +21,9 @@
 @media screen and (min-width: 1200px ) {
     .header-container {
         padding: 20px 17%;
+    }
+
+    .header-btn { 
+        font-size: 20px; 
     }
 }
