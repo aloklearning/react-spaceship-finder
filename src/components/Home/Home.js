@@ -32,19 +32,22 @@ const Home = () => {
         }
     ]
 
-    const SpaceShipItemRender = ({items}) => {
-        return (
-            <>
-                {items.map((item, index) => (<SpaceShipItem item={item} key={index} />))}
-            </>
-        )
-    }
-
     const EmptyContainer = () => {
         return(
             <h4>
                 Oops! No Data Found. Please try again with other filters.
             </h4>
+        )
+    }
+
+    const SpaceShipItemRender = ({items}) => {
+        return (
+            <>
+                {items.length > 0 ?
+                <>
+                {items.map((item, index) => (<SpaceShipItem item={item} key={index} />))}
+                </> : <EmptyContainer />}
+            </>
         )
     }
 
@@ -63,13 +66,22 @@ const Home = () => {
             For more info, please see: https://stackoverflow.com/a/57854008/5362583 */}
             {
                 (() => {
-                    if(params.colors.includes('all')) {
-                        return <SpaceShipItemRender items={spaceshipInfo} />
-                    }else if(params.colors.includes('none')) {
-                        return <EmptyContainer />
+                    let updatedArrayData = [];
+
+                    // Params returns string, it is the best way to convert
+                    // to bool
+                    const hasLaserPulse = (params.has_pulse_laser === 'true');
+                    if(params.colors.includes('all') 
+                    || params.colors.includes('none')
+                    || params.colors.includes('rgb')) {
+                        updatedArrayData = spaceshipInfo.filter((item) => (
+                            hasLaserPulse === item.has_pulse_laser 
+                        ))
+
+                        return <SpaceShipItemRender items={updatedArrayData} />
                     }else {
-                        const updatedArrayData = spaceshipInfo.filter((item) => (
-                            params.colors.includes(item.color[0])
+                        updatedArrayData = spaceshipInfo.filter((item) => (
+                            params.colors.includes(item.color[0]) && hasLaserPulse === item.has_pulse_laser
                         ))
 
                         return <SpaceShipItemRender items={updatedArrayData} />

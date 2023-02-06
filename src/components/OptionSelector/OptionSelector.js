@@ -1,10 +1,12 @@
 import './OptionSelector.css';
 import { useRef } from "react";
 import ColorPickerItem from './ColorPickerItem';
+import PulseLaserSelector from './PulseLaserSelector';
 
 const OptionSelector = ({ paramsObject, setParamsObject }) => {
     // For the final submission to query URL while filtering
     const colorItems = useRef([paramsObject.colors ?? '']);
+    const hasPulseLaserItem = useRef(paramsObject.has_pulse_laser ?? false);
 
     const onSubmit = () => {
         // Color selection handling
@@ -22,14 +24,18 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
                 })
             }
         }
-        
-        setParamsObject({...paramsObject, colors: colorParam.length > 0 ? colorParam : 'none'})
+
+        setParamsObject({...paramsObject,
+            has_pulse_laser: hasPulseLaserItem.current,
+            colors: colorParam.length > 0 ? colorParam : 'none'
+        })
     }
 
     return (
         <div className='color-picker-container'>
             <h4>Please select the filters from this dropdown</h4>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
+            <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
             {/* Filter button */}
             <br/>
