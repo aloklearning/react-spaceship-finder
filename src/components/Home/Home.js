@@ -20,7 +20,7 @@ const Home = () => {
             id: 2,
             color: 'blue',
             maximum_speed: '150',
-            has_pulse_laser: false,
+            has_pulse_laser: true,
             date_of_manufacture: '2019-02-13'
         },
         {
