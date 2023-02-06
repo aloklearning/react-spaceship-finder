@@ -33,7 +33,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
 
     return (
         <div className='color-picker-container'>
-            <h4>Please select the filters from this dropdown</h4>
+            <h4>Your Options</h4>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
