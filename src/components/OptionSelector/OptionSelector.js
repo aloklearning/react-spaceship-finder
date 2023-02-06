@@ -1,5 +1,7 @@
-import './OptionSelector.css';
 import { useRef } from "react";
+
+import './OptionSelector.css';
+import SpeedContainer from './SpeedContainer';
 import ColorPickerItem from './ColorPickerItem';
 import PulseLaserSelector from './PulseLaserSelector';
 
@@ -35,6 +37,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         <div className='color-picker-container'>
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
+            <SpeedContainer />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
             {/* Filter button */}
