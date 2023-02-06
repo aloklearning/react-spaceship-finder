@@ -17,5 +17,6 @@
 @media screen and (min-width: 1200px) {
     .welcome-container {
         display: flex;
+        padding: 15% 17%;
     }
 }

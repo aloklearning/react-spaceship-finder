@@ -1,0 +1,18 @@
+.spaceship-card-container {
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 10px 2%;
+    border-radius: 8px;
+    background-color: aliceblue;
+    box-shadow: 4px 8px 12px rgb(0 0 0 / 20%);
+}
+
+.about-content { 
+    display: flex;
+    padding-left: 2%;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+}
+
+.more-info { color: #212133; }
