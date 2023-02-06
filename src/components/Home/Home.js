@@ -46,7 +46,7 @@ const Home = () => {
             </h3>
             <br/>
 
-            <OptionSelector />
+            <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>
             <br/>
 
             {spaceshipInfo.map((item, index) => (<SpaceShipItem key={index} item={item} />))}

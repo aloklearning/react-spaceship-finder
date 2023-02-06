@@ -1,8 +1,13 @@
 import './OptionSelector.css';
 import { useState } from "react";
 
-const ColorPicker = ({  }) => {
-    const ColorPicker = () => {
+const OptionSelector = ({ paramsObject, setParamsObject }) => {
+
+    const onSubmit = () => {
+        
+    }
+
+    const ColorPickerItem = () => {
         const [colors, setColors] = useState(['All', 'Red', 'Blue', 'Green']);
         
         const ColorCheckBox = ({colorName, boolValue}) => {
@@ -13,7 +18,7 @@ const ColorPicker = ({  }) => {
             }
 
             return (
-                <label for={colorName} className='color-label'>
+                <label className='color-label'>
                     <input type="checkbox" checked={value} onChange={onChange} />
                     &nbsp;&nbsp;{colorName}
                 </label>
@@ -26,7 +31,11 @@ const ColorPicker = ({  }) => {
                 <div style={{marginTop: '10px'}} />
 
                 {colors.map((color, index) => (
-                    <ColorCheckBox key={index} colorName={color} boolValue={false} />
+                    <ColorCheckBox 
+                        key={index} 
+                        colorName={color} 
+                        boolValue={paramsObject.colors === color.toLowerCase()} 
+                    />
                 ))}
             </div>
         )
@@ -35,13 +44,13 @@ const ColorPicker = ({  }) => {
     return (
         <div className='color-picker-container'>
             <h4>Please select the filters from this dropdown</h4>
-            <ColorPicker />
+            <ColorPickerItem />
 
             {/* Filter button */}
             <br/>
-            <div className='btn filter-btn'>Search</div>
+            <div onClick={onSubmit} className='btn filter-btn'>Search</div>
         </div>
     )
 }
 
-export default ColorPicker;
+export default OptionSelector;
