@@ -5,7 +5,7 @@ const Welcome = () => {
     return (
         <div className='welcome-container'>
             <div className='logo-container'>
-                <MrZ width={400} height={400} />
+                <MrZ width={450} height={450} />
             </div>
             
             <div className='content-container'>
