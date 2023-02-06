@@ -1,6 +1,6 @@
 import './Home.css';
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SpaceShipItem from '../Spaceship/SpaceShipItem';
 import OptionSelector from '../OptionSelector/OptionSelector';
@@ -8,7 +8,7 @@ import OptionSelector from '../OptionSelector/OptionSelector';
 const Home = () => {
     const [urlQueries, setURLQueries] = useSearchParams()
     const params = Object.fromEntries([...urlQueries])
-
+    
     const [spaceshipInfo, setSpaceShipInfo] = useState([
         {
             id: 1,
@@ -32,12 +32,22 @@ const Home = () => {
             date_of_manufacture: '2018-02-13'
         }
     ])
-    
 
-    // Reading the query string
-    useEffect(() => {
-        // Pushing all the colors to the colors state object
-    }, [])
+    const SpaceShipItemRender = ({items}) => {
+        return (
+            <>
+                {items.map((item, index) => (<SpaceShipItem item={item} key={index} />))}
+            </>
+        )
+    }
+
+    const EmptyContainer = () => {
+        return(
+            <h4>
+                Oops! No Data Found. Please try again with other filters.
+            </h4>
+        )
+    }
 
     return (
         <div className='home-container'>
@@ -49,7 +59,24 @@ const Home = () => {
             <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>
             <br/>
 
-            {spaceshipInfo.map((item, index) => (<SpaceShipItem key={index} item={item} />))}
+            {/* This is a workaround for updating the list with the filter
+            useEffect with params is going into infinite loop which is not good.
+            For more info, please see: https://stackoverflow.com/a/57854008/5362583 */}
+            {
+                (() => {
+                    if(params.colors.includes('all')) {
+                        return <SpaceShipItemRender items={spaceshipInfo} />
+                    }else if(params.colors.includes('none')) {
+                        return <EmptyContainer />
+                    }else {
+                        const updatedArrayData = spaceshipInfo.filter((item) => (
+                            params.colors.includes(item.color[0])
+                        ))
+
+                        return <SpaceShipItemRender items={updatedArrayData} />
+                    }
+                })()
+            }
         </div>
     )
 }
