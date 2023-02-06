@@ -1,8 +1,24 @@
 import './Welcome.css';
 import React from 'react';
 import { ReactComponent as MrZ } from '../../assets/mrz.svg';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 
 const Welcome = () => {
+    const navigate = useNavigate();
+    const params = { 
+        colors: 'all', 
+        maximum_speed: 200,
+        has_pulse_laser: true, 
+        date_of_manufacture: '2020-02-13'
+    }
+
+    const goToHomePage = () => {
+        navigate({
+            pathname: '/home',
+            search: `?${createSearchParams(params)}`
+        })
+    }
+
     return (
         <div className='welcome-container'>
             <div className='logo-container'>
@@ -17,9 +33,9 @@ const Welcome = () => {
                 We are helping him to sort this problem out so that he can go to his work without any problem. 
                 </p>
 
-                <a href='/' className='btn'>
+                <div onClick={goToHomePage} className='btn'>
                     Let's Go
-                </a>
+                </div>
             </div>
         </div>
     )
