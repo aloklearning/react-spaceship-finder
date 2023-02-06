@@ -15,7 +15,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
             if(colorItems.current.includes('all')){
                 colorParam = 'all';
             }else{
-                // Stroing the value in rgba format to be able
+                // Storing the value in rgba format to be able
                 // to identify the color properly
                 colorItems.current.forEach(item => {
                     colorParam += item[0]
