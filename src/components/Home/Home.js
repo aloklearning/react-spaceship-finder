@@ -1,12 +1,13 @@
 import './Home.css';
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import SpaceShipItem from '../Spaceship/SpaceShipItem';
 import OptionSelector from '../OptionSelector/OptionSelector';
 
 const Home = () => {
-    const [urlQueries, setURLQueries] = useSearchParams()
-    const params = Object.fromEntries([...urlQueries])
+    const [showOptions, setShowOptions] = useState(false);
+    const [urlQueries, setURLQueries] = useSearchParams();
+    const params = Object.fromEntries([...urlQueries]);
     
     const spaceshipInfo = [
         {
@@ -56,9 +57,16 @@ const Home = () => {
             <h3>
                 Greetings Mr little Z! Welcome to your spaceport. What would you like to pick for your job today?
             </h3>
+
+            <div 
+            className='btn filter-btn'
+            onClick={() => setShowOptions(bool => bool = !bool)}
+            style={{margin: showOptions ? '30px 0' : '30px 0 0 0'}}>
+                Choose Spaceship
+            </div>
             <br/>
 
-            <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>
+            {showOptions && <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>}
             <br/>
 
             {/* This is a workaround for updating the list with the filter
