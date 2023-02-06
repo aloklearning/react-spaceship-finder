@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const ColorPickerItem = ({ colorItems, paramsObject }) => {
-    const [colors, setColors] = useState(['All', 'Red', 'Blue', 'Green']);
+    const colors = ['All', 'Red', 'Blue', 'Green'];
     
-    const ColorCheckBox = ({colorName, boolValue}) => {
-        const [value, setValue] = useState(boolValue)
+    const ColorCheckBox = ({colorName, bool}) => {
+        const [value, setValue] = useState(bool);
 
         const onChange = () => {
             setValue(valueStatus => valueStatus = !valueStatus)
@@ -17,8 +17,6 @@ const ColorPickerItem = ({ colorItems, paramsObject }) => {
             }else{
                 colorItems.current = colorItems.current.filter((item) => item !== colorName.toLowerCase())
             }
-
-            console.log(colorItems.current)
         }
 
         return (
@@ -37,8 +35,8 @@ const ColorPickerItem = ({ colorItems, paramsObject }) => {
             {colors.map((color, index) => (
                 <ColorCheckBox 
                     key={index} 
-                    colorName={color} 
-                    boolValue={paramsObject.colors === color.toLowerCase()} 
+                    colorName={color}
+                    bool={paramsObject.colors.includes(color.toLowerCase()[0])}
                 />
             ))}
         </div>
