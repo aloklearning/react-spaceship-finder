@@ -3,9 +3,11 @@
 * {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
+  color: aliceblue;
   background-color: #212133;
   font-family: 'Poppins', sans-serif;
 }
@@ -14,6 +16,23 @@ body {
   body {
     font-size: 30px;
   }
+}
+
+/* Global Button color code and design */
+.btn {
+  cursor: pointer;
+  color: aliceblue;
+  text-align: center;
+  padding: 10px 10px;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #fd6b6e;
+  background-color: #fd6b6e;
+}
+
+.btn:hover {
+  color: #fd6b6e;
+  background-color: aliceblue;
 }
 
 @media screen and (min-width: 768px) {

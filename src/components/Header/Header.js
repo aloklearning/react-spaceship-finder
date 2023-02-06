@@ -1,5 +1,5 @@
 import './Header.css';
-import {ReactComponent as HeaderLogo} from '../../assets/rocket_launch.svg';
+import { ReactComponent as HeaderLogo } from '../../assets/rocket_launch.svg';
 
 const Header = () => {
     return (

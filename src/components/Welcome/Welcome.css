@@ -1,0 +1,21 @@
+.welcome-container {
+    padding: 15% 5%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container { 
+    width: 100%; 
+    display: grid;
+    justify-content: center
+}
+
+.content-container { width: 100% }
+.sub-header { margin: 3% 0 4% 0 }
+
+@media screen and (min-width: 1200px) {
+    .welcome-container {
+        display: flex;
+    }
+}
