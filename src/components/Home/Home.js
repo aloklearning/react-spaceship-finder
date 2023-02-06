@@ -1,6 +1,5 @@
 import './Home.css';
 import React from "react";
-import { useRef, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SpaceShipItem from '../Spaceship/SpaceShipItem';
 import OptionSelector from '../OptionSelector/OptionSelector';
@@ -9,7 +8,7 @@ const Home = () => {
     const [urlQueries, setURLQueries] = useSearchParams()
     const params = Object.fromEntries([...urlQueries])
     
-    const [spaceshipInfo, setSpaceShipInfo] = useState([
+    const spaceshipInfo = [
         {
             id: 1,
             color: 'red',
@@ -31,7 +30,7 @@ const Home = () => {
             has_pulse_laser: true,
             date_of_manufacture: '2018-02-13'
         }
-    ])
+    ]
 
     const SpaceShipItemRender = ({items}) => {
         return (
