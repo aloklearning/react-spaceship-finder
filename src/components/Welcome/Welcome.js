@@ -1,4 +1,5 @@
 import './Welcome.css';
+import React from 'react';
 import { ReactComponent as MrZ } from '../../assets/mrz.svg';
 
 const Welcome = () => {

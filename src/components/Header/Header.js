@@ -1,4 +1,5 @@
 import './Header.css';
+import React from 'react';
 import { ReactComponent as HeaderLogo } from '../../assets/rocket_launch.svg';
 
 const Header = () => {
