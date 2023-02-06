@@ -62,7 +62,7 @@ const Home = () => {
             className='btn filter-btn'
             onClick={() => setShowOptions(bool => bool = !bool)}
             style={{margin: showOptions ? '30px 0' : '30px 0 0 0'}}>
-                Choose Spaceship
+                {showOptions ? 'Close' : 'Choose Spaceship'}
             </div>
             <br/>
 
