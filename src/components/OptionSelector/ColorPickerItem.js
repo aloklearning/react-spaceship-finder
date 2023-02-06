@@ -29,7 +29,7 @@ const ColorPickerItem = ({ colorItems, paramsObject }) => {
     
     return (
         <div style={{marginTop: '20px'}}>
-            <h5>1. Choose the following colors from the option below:</h5>
+            <p className='header'>1. Choose the following colors from the option below:</p>
             <div style={{marginTop: '10px'}} />
 
             {colors.map((color, index) => (

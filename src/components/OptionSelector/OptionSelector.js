@@ -33,7 +33,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
 
     return (
         <div className='color-picker-container'>
-            <h4>Your Options</h4>
+            <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 

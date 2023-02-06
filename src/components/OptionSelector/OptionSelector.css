@@ -16,26 +16,27 @@ input[type=checkbox] {
     accent-color: #fd6b6e;
 }
 
+.header { font-size: 1em }
 .color-label {
-    font-size: 13px; 
+    font-size: 1em; 
     padding: 0 12px;
     align-items: center;
     display: inline-flex;
 }
 
 .filter-btn {
-    font-size: 15px;
+    font-size: 13px;
     padding: 5px 10px; 
 }
 
 @media screen and (min-width: 1200px) {
-    .color-label {
-        font-size: 20px; 
-    }
-
     input[type=checkbox] {
         width: 18px;
         height: 18px;
+    }
+
+    .color-label, .header {
+        font-size: 0.9em
     }
 
     .filter-btn {
