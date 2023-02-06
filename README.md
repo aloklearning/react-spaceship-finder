@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# React Spaceship Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the given options on the web app.
 
 ## Available Scripts
 
