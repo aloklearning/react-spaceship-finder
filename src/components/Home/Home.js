@@ -57,6 +57,11 @@ const Home = () => {
             <h3>
                 Greetings Mr little Z! Welcome to your spaceport. What would you like to pick for your job today?
             </h3>
+            <h5 style={{fontWeight: '100', marginTop: 5}}>
+                To see the details of each spaceship, please tap on the spaceship card. You will be able to see all the
+                details connected to the selected spaceship. The below button "Choose Spaceship" will help you to filter out your 
+                suitable spaceship for today's job.
+            </h5>
 
             <div 
             className='btn filter-btn'
