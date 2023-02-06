@@ -24,9 +24,6 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         }
         
         setParamsObject({...paramsObject, colors: colorParam.length > 0 ? colorParam : 'none'})
-        
-        // Resetting for finerhandling
-        colorItems.current = [];
     }
 
     return (
