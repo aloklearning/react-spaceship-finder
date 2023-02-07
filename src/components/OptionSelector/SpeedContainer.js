@@ -1,7 +1,9 @@
 import { useState } from "react";
+import RadioButtonSelector from "./RadioButtonSelector";
 
 const SpeedContainer = () => {
     const [speed, setSpeed] = useState();
+    const [speedRadioOption, setSpeedRadioOption] = useState();
 
     return (
         <div style={{marginTop: 20}}>
@@ -18,9 +20,16 @@ const SpeedContainer = () => {
                     type='text' 
                     maxLength={3}
                     inputMode='numeric'
+                    className="speed-input"
                     placeholder='Add Maximum Speed'
                     onChange={(e) => setSpeed(e.target.value)}
                 />
+
+                <RadioButtonSelector 
+                    name="speed"
+                    radioOption={speedRadioOption}
+                    setRadioOption={setSpeedRadioOption}
+                    options={['Less than', 'More than', 'Exactly']}/>
             </div>
         </div>
     )

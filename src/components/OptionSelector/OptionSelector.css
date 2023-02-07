@@ -35,13 +35,25 @@ input[type=checkbox] {
     width: -webkit-fill-available;
 }
 
-.speed-container input {
-    /* flex: 2; */
+.speed-input {
     height: 20px;
+    font-size: 1em;
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: '700';
     border: 2px solid #fd6b6e;
+}
+
+.radio-container {
+    font-size: 1em;
+    padding: 15px 0 0 0;
+}
+
+input[type=radio] {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    accent-color: #fd6b6e;
 }
 
 @media screen and (min-width: 1200px) {
@@ -50,7 +62,12 @@ input[type=checkbox] {
         height: 18px;
     }
 
-    .color-label, .header {
+    .radio-container {
+        padding: 0 0 0 10%;
+        display: inline-block;
+    }
+
+    .color-label, .header, .radio-container {
         font-size: 0.9em
     }
 
@@ -58,7 +75,12 @@ input[type=checkbox] {
         font-size: 18px
     }
 
+    .speed-input {
+        font-size: 0.8em;
+    }
+
     .speed-container {
         display: flex;
+        justify-content: center;
     }
 }
