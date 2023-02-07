@@ -57,6 +57,7 @@ const Home = () => {
     const computeFilterCards = () => {
         let maximumSpeed = [];
         let updatedArrayData = [];
+        let manufacturingDate = [];
 
         // Params returns string, it is the best way to convert
         // to bool
@@ -70,51 +71,67 @@ const Home = () => {
             maximumSpeed = [parseInt(params.maximum_speed)];
         }
 
+        // Manufacturing Date Logic
+        if(params.date_of_manufacture.includes("-")){
+            manufacturingDate = params.date_of_manufacture.split("-");
+        }else{
+            manufacturingDate = [params.date_of_manufacture];
+        }
+
         // With All Color selection
         if(params.colors.includes('all') 
         || params.colors.includes('none')
         || params.colors.includes('rgb')) {
             // Filter Logic here
-            if(maximumSpeed.length === 1) {
+            if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
                 updatedArrayData = spaceshipInfo.filter((item) => (
-                    hasLaserPulse === item.has_pulse_laser && maximumSpeed[0] === item.maximum_speed
+                    hasLaserPulse === item.has_pulse_laser 
+                    && maximumSpeed[0] === item.maximum_speed
+                    && manufacturingDate[0] === item.date_of_manufacture
                 ))
             }else {
-                if(maximumSpeed[0] === 'above') {
+                if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
                     updatedArrayData = spaceshipInfo.filter((item) => (
-                        hasLaserPulse === item.has_pulse_laser && maximumSpeed[1] <= item.maximum_speed
+                        hasLaserPulse === item.has_pulse_laser 
+                        && maximumSpeed[1] <= item.maximum_speed
+                        && manufacturingDate[1] <= item.date_of_manufacture
                     )) 
                 }
 
-                if(maximumSpeed[0] === 'below') {
+                if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
                     updatedArrayData = spaceshipInfo.filter((item) => (
-                        hasLaserPulse === item.has_pulse_laser && maximumSpeed[1] >= item.maximum_speed
+                        hasLaserPulse === item.has_pulse_laser 
+                        && maximumSpeed[1] >= item.maximum_speed
+                        && manufacturingDate[1] >= item.date_of_manufacture
                     ))
                 }
             }
 
             return <SpaceShipItemRender items={updatedArrayData} />
         }else {
-            if(maximumSpeed.length === 1) {
+            if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
                 updatedArrayData = spaceshipInfo.filter((item) => (
                     params.colors.includes(item.color[0]) 
                     && hasLaserPulse === item.has_pulse_laser
                     && maximumSpeed[0] === item.maximum_speed
+                    && manufacturingDate[0] === item.date_of_manufacture
                 ))
             }else {
-                if(maximumSpeed[0] === 'above') {
+                if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
                     updatedArrayData = spaceshipInfo.filter((item) => (
                         params.colors.includes(item.color[0]) 
                         && hasLaserPulse === item.has_pulse_laser
                         && maximumSpeed[1] <= item.maximum_speed
+                        && manufacturingDate[1] <= item.date_of_manufacture
                     ))
                 }
 
-                if(maximumSpeed[0] === 'below') {
+                if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
                     updatedArrayData = spaceshipInfo.filter((item) => (
                         params.colors.includes(item.color[0]) 
                         && hasLaserPulse === item.has_pulse_laser
                         && maximumSpeed[1] >= item.maximum_speed
+                        && manufacturingDate[1] >= item.date_of_manufacture
                     ))
                 }
             }

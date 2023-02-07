@@ -19,7 +19,7 @@ const ManufactureDate = ({ paramsObject, dateItem }) => {
         }
 
         // Converting the provided time to date
-        let [myYear, myMonth, myDate] = date.split('/');
+        let myYear = date.split('/')[0];
         myYear = parseInt(myYear);
 
         if(myYear > 2020 || myYear < 1980) {

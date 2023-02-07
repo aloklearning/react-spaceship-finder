@@ -25,8 +25,8 @@ const DateSpeedWidget = ({
                     value={value}
                     maxLength={maxLength}
                     inputMode={inputMode}
-                    className="date-speed-input"
                     placeholder={placeholder}
+                    className="date-speed-input"
                     onChange={(e) => setSpeedDate(e.target.value)}
                 />
 
