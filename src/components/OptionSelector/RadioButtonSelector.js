@@ -1,4 +1,4 @@
-const RadioButtonSelector = ({ name, options, paramsObject, setRadioOption, defaultChecked}) => {
+const RadioButtonSelector = ({ name, options, paramsObject, setRadioOption}) => {
     const onChangeValue = (e) => {
         setRadioOption(e.target.value);
     }
