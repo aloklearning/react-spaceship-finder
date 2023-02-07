@@ -55,24 +55,69 @@ const Home = () => {
     // This the the final filtering happening once we have all the data received 
     // from the Query URL params
     const computeFilterCards = () => {
+        let maximumSpeed = [];
         let updatedArrayData = [];
 
-        
         // Params returns string, it is the best way to convert
         // to bool
         const hasLaserPulse = (params.has_pulse_laser === 'true');
+        
+        // Maxium Speed logic
+        if(params.maximum_speed.includes("-")){
+            maximumSpeed = params.maximum_speed.split("-");
+            maximumSpeed = [maximumSpeed[0], parseInt(maximumSpeed[1])];
+        }else{
+            maximumSpeed = [parseInt(params.maximum_speed)];
+        }
+
+        // With All Color selection
         if(params.colors.includes('all') 
         || params.colors.includes('none')
         || params.colors.includes('rgb')) {
-            updatedArrayData = spaceshipInfo.filter((item) => (
-                hasLaserPulse === item.has_pulse_laser
-            ))
+            // Filter Logic here
+            if(maximumSpeed.length === 1) {
+                updatedArrayData = spaceshipInfo.filter((item) => (
+                    hasLaserPulse === item.has_pulse_laser && maximumSpeed[0] === item.maximum_speed
+                ))
+            }else {
+                if(maximumSpeed[0] === 'above') {
+                    updatedArrayData = spaceshipInfo.filter((item) => (
+                        hasLaserPulse === item.has_pulse_laser && maximumSpeed[1] <= item.maximum_speed
+                    )) 
+                }
+
+                if(maximumSpeed[0] === 'below') {
+                    updatedArrayData = spaceshipInfo.filter((item) => (
+                        hasLaserPulse === item.has_pulse_laser && maximumSpeed[1] >= item.maximum_speed
+                    ))
+                }
+            }
 
             return <SpaceShipItemRender items={updatedArrayData} />
         }else {
-            updatedArrayData = spaceshipInfo.filter((item) => (
-                params.colors.includes(item.color[0]) && hasLaserPulse === item.has_pulse_laser
-            ))
+            if(maximumSpeed.length === 1) {
+                updatedArrayData = spaceshipInfo.filter((item) => (
+                    params.colors.includes(item.color[0]) 
+                    && hasLaserPulse === item.has_pulse_laser
+                    && maximumSpeed[0] === item.maximum_speed
+                ))
+            }else {
+                if(maximumSpeed[0] === 'above') {
+                    updatedArrayData = spaceshipInfo.filter((item) => (
+                        params.colors.includes(item.color[0]) 
+                        && hasLaserPulse === item.has_pulse_laser
+                        && maximumSpeed[1] <= item.maximum_speed
+                    ))
+                }
+
+                if(maximumSpeed[0] === 'below') {
+                    updatedArrayData = spaceshipInfo.filter((item) => (
+                        params.colors.includes(item.color[0]) 
+                        && hasLaserPulse === item.has_pulse_laser
+                        && maximumSpeed[1] >= item.maximum_speed
+                    ))
+                }
+            }
 
             return <SpaceShipItemRender items={updatedArrayData} />
         }
