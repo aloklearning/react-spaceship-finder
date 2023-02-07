@@ -1,4 +1,4 @@
-const RadioButtonSelector = ({ name, options, radioOption, setRadioOption}) => {
+const RadioButtonSelector = ({ name, options, paramsObject, setRadioOption}) => {
     
     const onChangeValue = (e) => {
         setRadioOption(e.target.value);
@@ -11,8 +11,13 @@ const RadioButtonSelector = ({ name, options, radioOption, setRadioOption}) => {
                     <input 
                         name={name} 
                         type="radio" 
-                        value={radioOption}
-                        onChange={onChangeValue} 
+                        value={item}
+                        onChange={onChangeValue}
+                        // Logic for the default check. If the value is coming
+                        // for the first time, it should be without - (for range),
+                        // and should be considered as Exactly
+                        defaultChecked={!paramsObject.maximum_speed
+                            .includes("-") ? item === 'Exactly' : false}
                     /> {item}
                 </div>
             ))}

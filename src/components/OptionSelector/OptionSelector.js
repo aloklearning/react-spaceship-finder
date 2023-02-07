@@ -8,6 +8,7 @@ import PulseLaserSelector from './PulseLaserSelector';
 const OptionSelector = ({ paramsObject, setParamsObject }) => {
     // For the final submission to query URL while filtering
     const colorItems = useRef([paramsObject.colors ?? '']);
+    const maximumSpeedItem = useRef(paramsObject.maximum_speed ?? '');
     const hasPulseLaserItem = useRef(paramsObject.has_pulse_laser ?? false);
 
     const onSubmit = () => {
@@ -37,7 +38,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         <div className='color-picker-container'>
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
-            <SpeedContainer />
+            <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
             {/* Filter button */}
