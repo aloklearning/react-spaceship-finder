@@ -46,7 +46,11 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
                 2. Choose the maxium speed between 50-200 from below:
             </p>
 
-            {/* Main content */}
+            {/* Main content
+            TODO: POSSIBLE BUG
+            Description: The value only changes in the query string only when radio button is selected.
+            If you change the text and do not touch radio button, the text change will not reflect in 
+            the URL. In case we have time, we will fix this. Solution is using debouncing in text change */}
             <div className="speed-container">
                 <input 
                     type='text' 
