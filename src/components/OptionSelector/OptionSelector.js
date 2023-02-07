@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 import './OptionSelector.css';
+import ManufactureDate from "./DatePicker";
 import SpeedContainer from './SpeedContainer';
 import ColorPickerItem from './ColorPickerItem';
 import PulseLaserSelector from './PulseLaserSelector';
@@ -10,6 +11,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
     const colorItems = useRef([paramsObject.colors ?? '']);
     const maximumSpeedItem = useRef(paramsObject.maximum_speed ?? '');
     const hasPulseLaserItem = useRef(paramsObject.has_pulse_laser ?? false);
+    const dateOfManufactureItem = useRef(paramsObject.date_of_manufacture ?? '');
 
     const onSubmit = () => {
         // Color selection handling
@@ -41,6 +43,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />
+            <ManufactureDate date={dateOfManufactureItem} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
             {/* Filter button */}

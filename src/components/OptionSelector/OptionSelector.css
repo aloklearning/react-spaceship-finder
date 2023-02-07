@@ -29,13 +29,13 @@ input[type=checkbox] {
     padding: 5px 10px; 
 }
 
-.speed-container {
+.date-speed-container {
     display: block;
     margin-top: 15px;
     width: -webkit-fill-available;
 }
 
-.speed-input {
+.date-speed-input {
     height: 20px;
     font-size: 1em;
     color: #212133;
@@ -76,11 +76,11 @@ input[type=radio] {
         font-size: 18px
     }
 
-    .speed-input {
+    .date-speed-input {
         font-size: 0.8em;
     }
 
-    .speed-container {
+    .date-speed-container {
         display: flex;
         justify-content: center;
     }

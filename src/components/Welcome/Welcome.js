@@ -9,7 +9,7 @@ const Welcome = () => {
         colors: 'all', 
         maximum_speed: 200,
         has_pulse_laser: true, 
-        date_of_manufacture: '2020-02-13'
+        date_of_manufacture: '2020/02/13'
     }
 
     const goToHomePage = () => {

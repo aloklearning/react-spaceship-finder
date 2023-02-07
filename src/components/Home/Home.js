@@ -15,21 +15,21 @@ const Home = () => {
             color: 'red',
             maximum_speed: 200,
             has_pulse_laser: true,
-            date_of_manufacture: '2020-02-13'
+            date_of_manufacture: '2020/02/13'
         },
         {
             id: 2,
             color: 'blue',
             maximum_speed: 150,
             has_pulse_laser: true,
-            date_of_manufacture: '2019-02-13'
+            date_of_manufacture: '2019/02/13'
         },
         {
             id: 3,
             color: 'green',
             maximum_speed: 100,
             has_pulse_laser: true,
-            date_of_manufacture: '2018-02-13'
+            date_of_manufacture: '2018/02/13'
         }
     ]
 

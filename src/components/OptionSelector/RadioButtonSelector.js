@@ -24,6 +24,21 @@ const RadioButtonSelector = ({ name, options, paramsObject, setRadioOption}) => 
                             /> {item}
                         </>
                     )}
+
+                    {name === 'date' && (
+                        <>
+                            <input 
+                                name={name} 
+                                type="radio" 
+                                value={item}
+                                onChange={onChangeValue}
+                                // The logic to make the radio button persistant default checked
+                                defaultChecked={!paramsObject.maximum_speed.includes("-") 
+                                ? item === 'Exact Date' : paramsObject.maximum_speed.split("-")[0] === "after"
+                                ? item === 'After' : item === 'Before'}
+                            /> {item}
+                        </>
+                    )}
                 </div>
             ))}
         </div>
