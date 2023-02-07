@@ -11,41 +11,30 @@ const ManufactureDate = ({ paramsObject, dateItem }) => {
     // By default the URL comes with exact speed. So exactly
     const [dateRadioOption, setDateRadioOption] = useState('Exact Date');
 
-    // useEffect(() => {
-    //     if(!date) {
-    //         alert('Date field cannot be left empty. Please fill the date' 
-    //         + ' in yyyy/mm/dd format and try again.');
-    //         return;
-    //     }
+    useEffect(() => {
+        storeFinalDate(date);
+    }, [dateRadioOption])
 
-    //     // Converting the provided time to date
-    //     let myYear = date.split('/')[0];
-    //     myYear = parseInt(myYear);
 
-    //     if(myYear > 2020 || myYear < 1980) {
-    //         alert('Invalid search. Searching beyond year range, i.e., 1980-2020.'
-    //         + ' Please try again.');
-    //         return; 
-    //     }else if(date === "1980/01/01" && dateRadioOption === 'Before') {
-    //         alert('Invalid search. Searching below the minimum year range, i.e., 1980.'
-    //         + ' Please try again.');
-    //         return;
-    //     }else if(date === "2020/12/31" && dateRadioOption === 'After') {
-    //         alert('Invalid search. Searching above the maximum year range, i.e., 2020.'
-    //         + ' Please try again.');
-    //         return;
-    //     }
-
-    //     // For the query string param to be passed to the option selector component
-    //     if(dateRadioOption === 'Exact Date') dateItem.current = date;
-    //     else if(dateRadioOption === 'Before') dateItem.current = `before-${date}`;
-    //     else dateItem.current = `after-${date}`;
-
-    // }, [dateRadioOption])
+    const storeFinalDate = (currDate) => {
+        // toLocaleDateString() returns the date in dd/mm/yyyy
+        // What we need is in yyyy/dd/mm, so need to reverse and then store
+        const dateArray = currDate.toLocaleDateString().split('/');
+        const reversedDate = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0];
+        
+        // For the query string param to be passed to the option selector component
+        if(dateRadioOption === 'Exact Date') dateItem.current = reversedDate;
+        else if(dateRadioOption === 'Before') dateItem.current = `before-${reversedDate}`;
+        else dateItem.current = `after-${reversedDate}`;
+    }
 
 
     const handleDateChange = (event) => {
-        setDate(new Date(event.target.value))
+        // A bug to fix when you only choose date and not the radio button
+        // It now changes the value everywhere, and it will reflect in
+        // query string as well
+        storeFinalDate(new Date(event.target.value));
+        setDate(new Date(event.target.value));
     }
 
     const DatePickerWidget = () => {

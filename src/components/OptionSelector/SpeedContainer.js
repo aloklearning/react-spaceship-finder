@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DateSpeedWidget from "./DateAndSpeedWidget";
+import RadioButtonSelector from "./RadioButtonSelector";
 
 const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
     const [speed, setSpeed] = useState(
@@ -41,21 +41,31 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
     }, [speedRadioOption])
 
     return (
-        <>
-            <DateSpeedWidget 
-                name='speed'
-                value={speed}
-                maxLength={3}
-                inputMode='numeric'
-                setSpeedDate={setSpeed}
-                paramsObject={paramsObject}
-                placeholder='Add Maximum Speed'
-                setRadioOption={setSpeedRadioOption}
-                options={['Less than', 'More than', 'Exactly']}
-                headerText='2. Choose the maxium speed between 50-200 from below:'
+        <div style={{marginTop: 20}}>
+            <p className='header'>
+                2. Choose the maxium speed between 50-200 from below:
+            </p>
 
-            />
-        </>
+            {/* Main content */}
+            <div className="speed-container">
+                <input 
+                    type='text' 
+                    value={speed}
+                    maxLength={3}
+                    inputMode='numeric'
+                    className='speed-input'
+                    placeholder='Add Maximum Speed'
+                    onChange={(e) => setSpeed(e.target.value)}
+                />
+
+                <RadioButtonSelector 
+                    name='speed'
+                    paramsObject={paramsObject}
+                    setRadioOption={setSpeedRadioOption}
+                    options={['Less than', 'More than', 'Exactly']}
+                />
+            </div>
+        </div>
     )
 }
 
