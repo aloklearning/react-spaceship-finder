@@ -8,7 +8,27 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
     const [speedRadioOption, setSpeedRadioOption] = useState('Exactly');
 
     useEffect(() => {
-        
+        // The input item is in string
+        const intSpeed = parseInt(speed);
+        if(intSpeed < 50 || intSpeed > 200){
+            alert('You have inserted a value beyond the range of 50-200.'
+            + 'You will not be able to filter. Please try again.');
+            return;
+        }else if(intSpeed === 50 && speedRadioOption === 'Less than') {
+            alert('Invalid search. Searching below the minimum range, i.e., 50.'
+            + ' Please try again.');
+            return;
+        }else if(intSpeed === 200 && speedRadioOption === 'More than') {
+            alert('Invalid search. Searching above the maximum range, i.e., 200.'
+            + ' Please try again.');
+            return;
+        }
+
+        // Adding the value to the params object
+        if(speedRadioOption === 'Less than') maximumSpeedItem.current = `below-${speed}`
+        else if(speedRadioOption === 'More than') maximumSpeedItem.current = `above-${speed}`
+        else maximumSpeedItem.current = speed
+
     }, [speedRadioOption])
 
     return (

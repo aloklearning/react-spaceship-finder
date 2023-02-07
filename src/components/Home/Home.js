@@ -13,21 +13,21 @@ const Home = () => {
         {
             id: 1,
             color: 'red',
-            maximum_speed: '200',
+            maximum_speed: 200,
             has_pulse_laser: true,
             date_of_manufacture: '2020-02-13'
         },
         {
             id: 2,
             color: 'blue',
-            maximum_speed: '150',
+            maximum_speed: 150,
             has_pulse_laser: true,
             date_of_manufacture: '2019-02-13'
         },
         {
             id: 3,
             color: 'green',
-            maximum_speed: '100',
+            maximum_speed: 100,
             has_pulse_laser: true,
             date_of_manufacture: '2018-02-13'
         }
@@ -52,6 +52,32 @@ const Home = () => {
         )
     }
 
+    // This the the final filtering happening once we have all the data received 
+    // from the Query URL params
+    const computeFilterCards = () => {
+        let updatedArrayData = [];
+
+        
+        // Params returns string, it is the best way to convert
+        // to bool
+        const hasLaserPulse = (params.has_pulse_laser === 'true');
+        if(params.colors.includes('all') 
+        || params.colors.includes('none')
+        || params.colors.includes('rgb')) {
+            updatedArrayData = spaceshipInfo.filter((item) => (
+                hasLaserPulse === item.has_pulse_laser
+            ))
+
+            return <SpaceShipItemRender items={updatedArrayData} />
+        }else {
+            updatedArrayData = spaceshipInfo.filter((item) => (
+                params.colors.includes(item.color[0]) && hasLaserPulse === item.has_pulse_laser
+            ))
+
+            return <SpaceShipItemRender items={updatedArrayData} />
+        }
+    }
+ 
     return (
         <div className='home-container'>
             <h3>
@@ -77,30 +103,7 @@ const Home = () => {
             {/* This is a workaround for updating the list with the filter
             useEffect with params is going into infinite loop which is not good.
             For more info, please see: https://stackoverflow.com/a/57854008/5362583 */}
-            {
-                (() => {
-                    let updatedArrayData = [];
-
-                    // Params returns string, it is the best way to convert
-                    // to bool
-                    const hasLaserPulse = (params.has_pulse_laser === 'true');
-                    if(params.colors.includes('all') 
-                    || params.colors.includes('none')
-                    || params.colors.includes('rgb')) {
-                        updatedArrayData = spaceshipInfo.filter((item) => (
-                            hasLaserPulse === item.has_pulse_laser 
-                        ))
-
-                        return <SpaceShipItemRender items={updatedArrayData} />
-                    }else {
-                        updatedArrayData = spaceshipInfo.filter((item) => (
-                            params.colors.includes(item.color[0]) && hasLaserPulse === item.has_pulse_laser
-                        ))
-
-                        return <SpaceShipItemRender items={updatedArrayData} />
-                    }
-                })()
-            }
+            { (computeFilterCards)() }
         </div>
     )
 }

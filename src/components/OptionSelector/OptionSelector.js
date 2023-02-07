@@ -13,8 +13,8 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
 
     const onSubmit = () => {
         // Color selection handling
-        // If the selection contains all, then only all
-        // Else, combine all of them
+        // Done here, as this was an array, so handling array items done
+        // in the color picker component only
         let colorParam = '';
         if(colorItems.current.length > 0) {
             if(colorItems.current.includes('all')){
@@ -29,6 +29,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         }
 
         setParamsObject({...paramsObject,
+            maximum_speed: maximumSpeedItem.current,
             has_pulse_laser: hasPulseLaserItem.current,
             colors: colorParam.length > 0 ? colorParam : 'none'
         })
