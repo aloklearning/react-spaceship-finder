@@ -151,11 +151,23 @@ const Home = () => {
                 suitable spaceship for today's job.
             </h5>
 
-            <div 
-            className='btn filter-btn'
-            onClick={() => setShowOptions(bool => bool = !bool)}
-            style={{margin: showOptions ? '30px 0' : '30px 0 0 0'}}>
-                {showOptions ? 'Close' : 'Choose Spaceship'}
+            <div style={{display: 'flex'}}>
+                <div 
+                className='btn filter-btn'
+                onClick={() => setShowOptions(bool => bool = !bool)}
+                style={{margin: showOptions ? '30px 0' : '30px 0 0 0'}}>
+                    {showOptions ? 'Close' : 'Choose Spaceship'}
+                </div>
+
+                {/* Point being, this should show the items when the user is not worrying about
+                filtering and would like to see all the spaceships without the filter container */}
+                {!showOptions && (
+                <div 
+                className='btn filter-btn'
+                onClick={() => {}}
+                style={{margin: '30px 0 0 20px'}}>
+                    Show All Spaceship
+                </div>)}
             </div>
             <br/>
 
