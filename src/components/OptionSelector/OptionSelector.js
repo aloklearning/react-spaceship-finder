@@ -34,6 +34,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         setParamsObject({...paramsObject,
             maximum_speed: maximumSpeedItem.current,
             has_pulse_laser: hasPulseLaserItem.current,
+            date_of_manufacture: dateOfManufactureItem.current,
             colors: colorParam.length > 0 ? colorParam : 'none'
         })
     }
@@ -43,7 +44,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />
-            <ManufactureDate date={dateOfManufactureItem} paramsObject={paramsObject} />
+            <ManufactureDate dateItem={dateOfManufactureItem} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
 
             {/* Filter button */}
