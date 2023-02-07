@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import RadioButtonSelector from "./RadioButtonSelector";
 
 const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
-    const [speed, setSpeed] = useState(paramsObject.maximum_speed);
+    const [speed, setSpeed] = useState(
+        paramsObject.maximum_speed.includes("-") 
+        ? paramsObject.maximum_speed.split("-")[1]
+        : paramsObject.maximum_speed
+    );
 
     // By default the URL comes with exact speed. So exactly
     const [speedRadioOption, setSpeedRadioOption] = useState('Exactly');
