@@ -169,7 +169,6 @@ const Home = () => {
                     Show All Spaceship
                 </div>)}
             </div>
-            <br/>
 
             {showOptions && <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>}
             <br/>
