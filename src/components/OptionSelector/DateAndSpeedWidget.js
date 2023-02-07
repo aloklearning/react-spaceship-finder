@@ -19,14 +19,14 @@ const DateSpeedWidget = ({
             </p>
 
             {/* Main content */}
-            <div className="date-speed-container">
+            <div className="speed-container">
                 <input 
                     type='text' 
                     value={value}
                     maxLength={maxLength}
                     inputMode={inputMode}
+                    className='speed-input'
                     placeholder={placeholder}
-                    className="date-speed-input"
                     onChange={(e) => setSpeedDate(e.target.value)}
                 />
 

@@ -46,7 +46,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
             <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />
             <ManufactureDate dateItem={dateOfManufactureItem} paramsObject={paramsObject} />
             <PulseLaserSelector hasPulseLaserItem={hasPulseLaserItem} />
-
+            
             {/* Filter button */}
             <br/>
             <div onClick={onSubmit} className='btn filter-btn'>Search</div>

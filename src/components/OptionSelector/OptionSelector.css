@@ -30,15 +30,26 @@ input[type=checkbox] {
     margin-bottom: 10px;
 }
 
-.date-speed-container {
+.speed-container, .date-picker-container {
     display: block;
     margin-top: 15px;
     width: -webkit-fill-available;
 }
 
-.date-speed-input {
+.speed-input {
     height: 20px;
     font-size: 1em;
+    color: #212133;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: '700';
+    border: 2px solid #fd6b6e;
+}
+
+.date-picker {
+    flex: none;
+    height: 20px;
+    font-size: 1.4em;
     color: #212133;
     padding: 5px 10px;
     border-radius: 5px;
@@ -77,12 +88,16 @@ input[type=radio] {
         font-size: 18px
     }
 
-    .date-speed-input {
+    .speed-input {
         font-size: 0.8em;
     }
 
-    .date-speed-container {
+    .date-picker {
+        font-size: 0.9em;
+    }
+
+    .speed-container, .date-picker-container {
         display: flex;
-        justify-content: center;
+        align-items: center;
     }
 }
