@@ -163,7 +163,7 @@ const Home = () => {
                 filtering and would like to see all the spaceships without the filter container */}
                 {!showOptions && (
                 <div 
-                className='btn filter-btn'
+                className='show-all-btn filter-btn'
                 onClick={() => {}}
                 style={{margin: '30px 0 0 20px'}}>
                     Show All Spaceship

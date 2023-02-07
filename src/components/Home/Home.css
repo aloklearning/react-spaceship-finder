@@ -2,6 +2,22 @@
     padding: 20% 5%
 }
 
+.show-all-btn {
+    cursor: pointer;
+    color: #fd6b6e;
+    text-align: center;
+    padding: 10px 10px;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #fd6b6e;
+    background-color: transparent;
+  }
+  
+  .show-all-btn:hover {
+    color: aliceblue;
+    background-color: #fd6b6e;
+  }
+
 @media screen and (min-width: 1200px) {
     .home-container {
         padding: 10% 17%;
