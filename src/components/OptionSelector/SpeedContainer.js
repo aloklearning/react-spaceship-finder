@@ -8,8 +8,13 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
     const [speedRadioOption, setSpeedRadioOption] = useState('Exactly');
 
     useEffect(() => {
-        // The input item is in string
+        // Preventing string input
         const intSpeed = parseInt(speed);
+        if(isNaN(intSpeed)){
+            alert(`"${speed}" is not a valid input. Please enter numerical value and try again.`);
+            return;
+        }
+
         if(intSpeed < 50 || intSpeed > 200){
             alert('You have inserted a value beyond the range of 50-200.'
             + 'You will not be able to filter. Please try again.');
