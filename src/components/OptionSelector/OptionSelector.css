@@ -29,6 +29,21 @@ input[type=checkbox] {
     padding: 5px 10px; 
 }
 
+.speed-container {
+    display: block;
+    margin-top: 15px;
+    width: -webkit-fill-available;
+}
+
+.speed-container input {
+    /* flex: 2; */
+    height: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: '700';
+    border: 2px solid #fd6b6e;
+}
+
 @media screen and (min-width: 1200px) {
     input[type=checkbox] {
         width: 18px;
@@ -41,5 +56,9 @@ input[type=checkbox] {
 
     .filter-btn {
         font-size: 18px
+    }
+
+    .speed-container {
+        display: flex;
     }
 }
