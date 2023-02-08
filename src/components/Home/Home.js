@@ -102,10 +102,7 @@ const Home = () => {
             }
         }
 
-        // Params returns string, it is the best way to convert
-        // to bool
         const hasLaserPulse = (params.has_pulse_laser === 'true');
-
         if(withColorFilter){
             resultSpaceships = spaceshipInfo.filter((item) => (
                 params.colors.includes(item.color[0]) 
@@ -325,10 +322,18 @@ const Home = () => {
     // This the the final filtering happening once we have all the data received 
     // from the Query URL params
     const computeFilterCards = () => {
+        //---- SHOW ALL ITEMS ----
+        // Params returns string, it is the best way to bool
+        const showAll = (params.show_all === 'true');
+        if(showAll){
+            return <SpaceShipItemRender items={spaceshipInfo} />
+        }
+
+        //---- FILTERING LOGIC HERE ----
         let maximumSpeed = [];
         let updatedArrayData = [];
         let manufacturingDate = [];
-        
+
         // Maxium Speed logic
         if(params.maximum_speed.includes("-")){
             maximumSpeed = params.maximum_speed.split("-");
@@ -384,9 +389,9 @@ const Home = () => {
                 filtering and would like to see all the spaceships without the filter container */}
                 {!showOptions && (
                 <div 
+                style={{margin: '30px 0 0 20px'}}
                 className='show-all-btn filter-btn'
-                onClick={() => {}}
-                style={{margin: '30px 0 0 20px'}}>
+                onClick={() => setURLQueries({...params, show_all: true})}>
                     Show All Spaceships
                 </div>)}
             </div>

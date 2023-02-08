@@ -31,7 +31,8 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         }
 
         // Changing the query string to the updated data from the form
-        setParamsObject({...paramsObject,
+        setParamsObject({
+            show_all: false,
             maximum_speed: maximumSpeedItem.current,
             has_pulse_laser: hasPulseLaserItem.current,
             date_of_manufacture: dateOfManufactureItem.current,

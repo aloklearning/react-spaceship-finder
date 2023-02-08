@@ -6,6 +6,7 @@ import { useNavigate, createSearchParams } from 'react-router-dom';
 const Welcome = () => {
     const navigate = useNavigate();
     const params = { 
+        show_all: false,
         colors: 'all', 
         maximum_speed: 200,
         has_pulse_laser: true, 
