@@ -139,5 +139,9 @@ I took close to `3 days`. It was given on `Friday, Feb 3rd 2023`, and it was sub
 - The `rgb` stands for `red`, `green` and `blue`. And individual represents the same color.
 - This has been implemented to get the best results in the filtering. 
 
+## Links
+
+- [React Official Website](https://reactjs.org/)
+- [How to Install NodeJS and NPM](https://kinsta.com/blog/how-to-install-node-js/)
 
 
