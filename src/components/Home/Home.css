@@ -3,20 +3,31 @@
 }
 
 .show-all-btn {
-    cursor: pointer;
-    color: #fd6b6e;
-    text-align: center;
-    padding: 10px 10px;
-    display: inline-block;
-    text-decoration: none;
-    border: 2px solid #fd6b6e;
-    background-color: transparent;
-  }
-  
-  .show-all-btn:hover {
-    color: aliceblue;
-    background-color: #fd6b6e;
-  }
+  cursor: pointer;
+  color: #fd6b6e;
+  text-align: center;
+  padding: 10px 10px;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #fd6b6e;
+  background-color: transparent;
+}
+
+.show-all-btn:hover {
+  color: aliceblue;
+  background-color: #fd6b6e;
+}
+
+.query-string-container {
+  display: block;
+  font-size: 0.6em;
+  color: #34e2e2;
+  margin-top: 20px;
+  padding: 10px 2%;
+  border-radius: 8px;
+  background-color: black;
+  box-shadow: 4px 8px 12px rgb(0 0 0 / 20%);
+}
 
 @media screen and (min-width: 1200px) {
     .home-container {

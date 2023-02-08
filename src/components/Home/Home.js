@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import SpaceShipItem from '../Spaceship/SpaceShipItem';
 import OptionSelector from '../OptionSelector/OptionSelector';
+import QueryContainer from './QueryContainer';
 
 const Home = () => {
     const [showOptions, setShowOptions] = useState(false);
@@ -361,6 +362,8 @@ const Home = () => {
                 details connected to the selected spaceship. The below button "Choose Spaceship" will help you to filter out your 
                 suitable spaceship for today's job.
             </h5>
+
+            <QueryContainer />
 
             <div style={{display: 'flex'}}>
                 <div 
