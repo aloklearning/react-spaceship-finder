@@ -125,7 +125,7 @@ There must be few bugs which will come while testing the app. I am open to feedb
 
 ## FAQs
 
-### How many days did you take to complete the taks?
+#### Q. How many days did you take to complete the taks?
 
 I took close to `3 days`. It was given on `Friday, Feb 3rd 2023`, and it was submitted on `Wednesday, Feb 8th 2023`. Excluding `Satruday and Sunday` in between.
 
