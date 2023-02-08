@@ -20,11 +20,12 @@
 
 .query-string-container {
   color: white;
-  display: block;
   font-size: 0.83em;
   margin-top: 20px;
   padding: 10px 2%;
+  flex-wrap: wrap;
   border-radius: 8px;
+  word-wrap: break-word;
   background-color: #3e3e67;
   box-shadow: 0 4px 6px rgb(0 0 0 / 25%);
 }
