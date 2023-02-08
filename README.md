@@ -125,12 +125,16 @@ There must be few bugs which will come while testing the app. I am open to feedb
 
 ## FAQs
 
-#### How will the filter work for `All` and `Specific Searching` with the query string for API?
+### How many days did you take to complete the taks?
+
+I took close to `3 days`. It was given on `Friday, Feb 3rd 2023`, and it was submitted on `Wednesday, Feb 8th 2023`. Excluding `Satruday and Sunday` in between.
+
+#### Q. How will the filter work for `All` and `Specific Searching` with the query string for API?
 
 - The query string comes with a key called `show_all`, if the value is `true`, then just render all the items. And there is no need of looking at the other fields.
 - If the `show_all` is set to `false`, that means a specific search has been asked by the user, which will clearly be reflected in the query string section on the home page.
 
-#### What is `rgb` or `r` or `g` or `b` in the query string?
+#### Q. What is `rgb` or `r` or `g` or `b` in the query string?
 
 - The `rgb` stands for `red`, `green` and `blue`. And individual represents the same color.
 - This has been implemented to get the best results in the filtering. 
