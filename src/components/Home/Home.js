@@ -1,24 +1,33 @@
 import './Home.css';
-import React, { useState } from "react";
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import QueryContainer from './QueryContainer';
+import { useLocation } from 'react-router-dom';
 import SpaceShipItem from '../Spaceship/SpaceShipItem';
 import OptionSelector from '../OptionSelector/OptionSelector';
-import QueryContainer from './QueryContainer';
 
 const Home = () => {
+    const paramsProps = useLocation().state;
+    const [params, setParams] = useState(paramsProps);
     const [showOptions, setShowOptions] = useState(false);
-    const [urlQueries, setURLQueries] = useSearchParams();
-    const params = Object.fromEntries([...urlQueries]);
-    
+
+    const [queryString, setQueryString] = useState(
+        new URLSearchParams(paramsProps).toString()
+    )
+
+    // Using these hooks, we can do the state management 
+    // via query string change in the url
+    // const [urlQueries, setURLQueries] = useSearchParams();
+    // const params = Object.fromEntries([...urlQueries]);
     
     const spaceshipInfo = require('../../assets/spaceships.json');
 
     // ---- API CALLING SOLUTION ----
-    // useEffect(() => {
+    useEffect(() => {
         // DO API CALLING WITH QUERY PARAMS
         // We can access prams data here as the params changes, and 
         // then call the API with the data, as params.show_all etc
-    // }, [params])
+        setQueryString(new URLSearchParams(params).toString());
+    }, [params])
 
     const EmptyContainer = () => {
         return(
@@ -89,7 +98,7 @@ const Home = () => {
             }
         }
 
-        const hasLaserPulse = (params.has_pulse_laser === 'true');
+        const hasLaserPulse = params.has_pulse_laser;
         if(withColorFilter){
             resultSpaceships = spaceshipInfo.filter((item) => (
                 params.colors.includes(item.color[0]) 
@@ -310,8 +319,7 @@ const Home = () => {
     // from the Query URL params
     const computeFilterCards = () => {
         //---- SHOW ALL ITEMS ----
-        // Params returns string, it is the best way to bool
-        const showAll = (params.show_all === 'true');
+        const showAll = params.show_all;
         if(showAll){
             return <SpaceShipItemRender items={spaceshipInfo} />
         }
@@ -364,7 +372,7 @@ const Home = () => {
                 suitable spaceship for today's job.
             </h5>
 
-            <QueryContainer />
+            <QueryContainer queryString={queryString} />
 
             <div style={{display: 'flex'}}>
                 <div 
@@ -380,12 +388,12 @@ const Home = () => {
                 <div 
                 style={{margin: '30px 0 0 20px'}}
                 className='show-all-btn filter-btn'
-                onClick={() => setURLQueries({...params, show_all: true})}>
+                onClick={() => setParams({...params, show_all: true})}>
                     Show All Spaceships
                 </div>)}
             </div>
 
-            {showOptions && <OptionSelector paramsObject={params} setParamsObject={setURLQueries}/>}
+            {showOptions && <OptionSelector paramsObject={params} setParamsObject={setParams}/>}
             <br/>
 
             {/* This is a workaround for updating the list with the filter
