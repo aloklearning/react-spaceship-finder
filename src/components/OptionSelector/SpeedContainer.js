@@ -1,21 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import RadioButtonSelector from "./RadioButtonSelector";
 
 const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
-    const [speed, setSpeed] = useState(
-        paramsObject.maximum_speed.includes("-") 
-        ? paramsObject.maximum_speed.split("-")[1]
-        : paramsObject.maximum_speed
-    );
+    const timer = useRef();
+    const speed = useRef();
+
+    // For haivng a preset value coming from the first time 
+    // query string or search
+    const initialValue = paramsObject.maximum_speed.includes("-") 
+    ? paramsObject.maximum_speed.split("-")[1]
+    : paramsObject.maximum_speed;
+
 
     // By default the URL comes with exact speed. So exactly
     const [speedRadioOption, setSpeedRadioOption] = useState('Exactly');
 
     useEffect(() => {
+        // Triggers when raido option changes
+        sendingFinalResults();
+    }, [speedRadioOption])
+
+    const sendingFinalResults = () => {
         // Preventing string input
-        const intSpeed = parseInt(speed);
+        const intSpeed = parseInt(speed.current.value);
         if(isNaN(intSpeed)){
-            alert(`"${speed}" is not a valid input. Please enter numerical value and try again.`);
+            alert(`"${speed.current.value}" is not a valid input. Please enter numerical value and try again.`);
             return;
         }
 
@@ -34,11 +43,19 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
         }
 
         // Adding the value to the params object
-        if(speedRadioOption === 'Less than') maximumSpeedItem.current = `below-${speed}`
-        else if(speedRadioOption === 'More than') maximumSpeedItem.current = `above-${speed}`
-        else maximumSpeedItem.current = speed
+        if(speedRadioOption === 'Less than') maximumSpeedItem.current = `below-${speed.current.value}`
+        else if(speedRadioOption === 'More than') maximumSpeedItem.current = `above-${speed.current.value}`
+        else maximumSpeedItem.current = speed.current.value
+    }
 
-    }, [speedRadioOption])
+    // Debouncing to send the updated data when the user writes something as well
+    const handleDebounceChange = () => {
+        clearTimeout(timer.current);
+
+        timer.current = setTimeout(() => {
+            sendingFinalResults();
+        }, 1000);
+    }
 
     return (
         <div style={{marginTop: 20}}>
@@ -54,12 +71,13 @@ const SpeedContainer = ({ maximumSpeedItem, paramsObject }) => {
             <div className="speed-container">
                 <input 
                     type='text' 
-                    value={speed}
+                    ref={speed}
                     maxLength={3}
                     inputMode='numeric'
                     className='speed-input'
+                    defaultValue={initialValue}
                     placeholder='Add Maximum Speed'
-                    onChange={(e) => setSpeed(e.target.value)}
+                    onChange={handleDebounceChange}
                 />
 
                 <RadioButtonSelector 
