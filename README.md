@@ -6,6 +6,7 @@
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the various options in a web application.
 - This project is **fully responsive** and has taken UI motivations from [PolyAI](https://poly.ai/) to give a feeling of belongingness to the PolyAI ecosystem.
+- The UI/UX implementations and strategiies are purely developer's ([Alok Kumar](https://github.com/aloklearning)) work and there is no way it has been copy-pasted from other website.
 
 ## Pre-Requisites
 
@@ -38,13 +39,30 @@ npm -v
 npm view react version
 ```
 
+## Features
+
+The project has been created to give the users the best experience possible. Here are some of the highlighting features the web provides:
+
+- Fully responsive
+- Nice UI and User experience.
+- The app provides filtering of spaceships based on the fields like **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
+- The app is capable of filtering with the combination of sophisticated variations for few filters like:
+    - **Colors:** All, Any of the selected colors, none of the selected colors.
+    - **Maxium Speed:** Less than, More than, Exactly
+    - **Pulse Laser:** Has or Has Not
+    - **Date of Manufacture:** After, Before, On the exact date
+- **Show All Spaceships** feature is present.
+- View details of a specific spaceship easily by clicking on the card.
+- A **Query String** is generated and show with the filter resuilts. It keeps on updating as the filter changes.
+- The page comes with a **default filtered data** on the page load along with the same filters applied in the filter section.
+- A dedicated and interactive space for filtering which helps you do the filtering with ease and without hassle.
 
 ## Running the Project
 
 - Go to the project directory, you can run:
 
 ```bash
-npm start
+npm install && npm run
 ```
 
-- Runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- It will first install the **depenedencies** of the project and then runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
