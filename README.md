@@ -11,9 +11,9 @@
 ## Pre-Requisites
 
 Make sure you have the following installed in your system before you proceed to run this project:
-- [x] Node > 14.x.x
-- [x] npm > 5.x.x
-- [x] Latest version of `React Installed`
+- [ ] Node > 14.x.x
+- [ ] npm > 5.x.x
+- [ ] Latest version of `React Installed`
 
 ## Verification
 
@@ -46,6 +46,7 @@ The project has been created to give the users the best experience possible. Her
 - Fully responsive
 - Nice UI and User experience.
 - The app provides filtering of spaceships based on the fields like **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
+-  Comes with various validations like checking the range of **Maximum Speed**, and **Date of Manufacture**.
 - The app is capable of filtering with the combination of sophisticated variations for few filters like:
     - **Colors:** All, Any of the selected colors, none of the selected colors.
     - **Maxium Speed:** Less than, More than, Exactly
@@ -57,7 +58,7 @@ The project has been created to give the users the best experience possible. Her
 - The page comes with a **default filtered data** on the page load along with the same filters applied in the filter section.
 - A dedicated and interactive space for filtering which helps you do the filtering with ease and without hassle.
 
-## Running the Project
+## Running the Project 💻
 
 - Go to the project directory, you can run:
 
@@ -66,3 +67,23 @@ npm install && npm run
 ```
 
 - It will first install the **depenedencies** of the project and then runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Submission Checklists ✅
+
+- [x] Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
+- [x] Variations with the above filters:
+    - [x] **Colors:** All, Any of the selected colors, none of the selected colors.
+    - [x] **Maximum Speed:**
+        - [x] Less than, More than, Exactly
+        - [x] Maxium speed range check **(50-200)**
+    - [x] **Pulse Laser:** Has or Has Not
+    - [x] **Date of Manufacture:** 
+        - [x] After, Before, On the exact date
+        - [x] Date range check **(1980-2020)**
+- [x] Spaceship information being shown and real-time changes based upon the filter data
+- [x] Query string being generated and shown on the page. 
+- [x] Updating the filter updates the query string.
+
+### Bonus Checklist ✅
+
+- [x] Parsing the query string on page load, or even returning some filtered data.
