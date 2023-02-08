@@ -55,7 +55,9 @@ The project has been created to give the users the best experience possible. Her
     - **Date of Manufacture:** After, Before, On the exact date
 - **Show All Spaceships** feature is present.
 - View details of a specific spaceship easily by clicking on the card.
+- Persistant filter, which doesn't change the value even when the data or result changes. 
 - A **Query String** is generated and show with the filter resuilts. It keeps on updating as the filter changes.
+    - The **query string** comes with the **URL Encoding**. It can directly be used to push it to the url to maintain the filter.
 - The page comes with a **default filtered data** on the page load along with the same filters applied in the filter section.
 - A dedicated and interactive space for filtering which helps you do the filtering with ease and without hassle.
 
@@ -71,7 +73,7 @@ npm install && npm run
 
 ### Instructions
 
-- Once you are able to run the project. Simply hit
+- A very well versed illustrations has been provided to best help out the users to understand how the app looks and works like. Please click [here](https://github.com/aloklearning/react-spaceship-finder/blob/main/src/assets/github_resources/MrLittleZSearchingApp_Alok_Kumar_2023-02-08.pdf).
 
 ## Submission Checklists
 
@@ -88,9 +90,50 @@ npm install && npm run
 - [x] Spaceship information being shown and real-time changes based upon the filter data
 - [x] Query string being generated and shown on the page. 
 - [x] Updating the filter updates the query string.
+- [x] Query string is API and page url sharing friendly. 
+- [x] **No 3rd party libraries/packages** has been **used** like **date picker**. The only 3rd party library has been used, which is [React Router DOM](https://www.npmjs.com/package/react-router-dom) being used for navigation.
 
 ### Bonus Checklist
 
 - [x] Parsing the query string on page load, or even returning some filtered data.
+
+## Assumptions
+
+- The option **Maxium Speed** can come with a speed provider and a **single** selectable option, as it does say **able to choose**, unlike colors option, which says **choose multiple color options**.
+- The option **Manufactuing Date** can come with a date and a **single** selectable option. Reason being the same as above.
+- The generated query string can be shown on the home page, as there was a difficulty in understanding to show the real time changes with the work. `console.log()` was not a good idea. 
+- **Show all spaceships** can be included, as in the filter app, it is usually an option which can add better UX.
+- API filtering implementation doesn't have to be written or shown in the code. A comment in the `useEffect()` can help the developers/assessors understand that where exactly it will be implemented.
+- All filter selection based filtering, and not all. It helped me save some time. 
+- Test cases are not mandatory to be written in the assignment. 
+- Color can be selected as minimum as possible. It saved time in getting the filter to work quickly. Chosen only `red`, `green` and `blue`.
+
+## Improvements
+
+A project can always be improved. Given the time, I have tried my level best to give the best UI-UX possible. Although I do have some pointers where the app can be improved:
+
+- [ ] Manufacturing filter could have been enhanced on having `After` and `Before` date pickers for selecting the dates in the **range**.
+- [ ] Integer based handling of the speed. It has been made query string friendly.
+- [ ] Smaller screen UI could have been improved.
+- [ ] Test cases in the project.
+- [ ] A footer section will add more value to the web, talking more about the project and the developer.
+- [ ] Filtering logic could have been improved on having optional filter selections, and not all. 
+
+## Feedback
+
+There must be few bugs which will come while testing the app. I am open to feedback, as I firmly believe that a product becomes successful with the feedbacks. I will appreciate the time very much. Here is my email: `alokk830@gmail.com`
+
+## FAQs
+
+#### How will the filter work for `All` and `Specific Searching` with the query string for API?
+
+- The query string comes with a key called `show_all`, if the value is `true`, then just render all the items. And there is no need of looking at the other fields.
+- If the `show_all` is set to `false`, that means a specific search has been asked by the user, which will clearly be reflected in the query string section on the home page.
+
+#### What is `rgb` or `r` or `g` or `b` in the query string?
+
+- The `rgb` stands for `red`, `green` and `blue`. And individual represents the same color.
+- This has been implemented to get the best results in the filtering. 
+
 
 
