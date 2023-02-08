@@ -119,9 +119,20 @@ A project can always be improved. Given the time, I have tried my level best to 
 - [ ] A footer section will add more value to the web, talking more about the project and the developer.
 - [ ] Filtering logic could have been improved on having optional filter selections, and not all. 
 
+## Challenges Faced
+
+The project was quite challenging, considering the fact that the delivery has to be close to perfect. There are few things which did test the developer's grit:
+
+- Combining multiple filters and giving the right results
+- Handling filters coming with associated filters like **Maximum Speed** having `Less than`, `More than`, and `Exactly`.
+- Fixing bugs like updating the Input when the word changes and radio button is not selected.
+- Deciding the optimum `query string` and the `filter params` suitable for best filtering logic and url friendliness.
+
 ## Feedback
 
 There must be few bugs which will come while testing the app. I am open to feedback, as I firmly believe that a product becomes successful with the feedbacks. I will appreciate the time very much. Here is my email: `alokk830@gmail.com`
+
+
 
 ## FAQs
 
