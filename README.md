@@ -7,6 +7,7 @@
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the various options in a web application.
 - This project is **fully responsive** and has taken UI motivations from [PolyAI](https://poly.ai/) to give a feeling of belongingness to the PolyAI ecosystem.
 - The UI/UX implementations and strategiies are purely developer's ([Alok Kumar](https://github.com/aloklearning)) work and there is no way it has been copy-pasted from other website.
+- A very well illustrated demo has been provided [here](). Please do see that to know more about how the **app works**, and how it **looks like**.
 
 ## Pre-Requisites
 
@@ -68,6 +69,10 @@ npm install && npm run
 
 - It will first install the **depenedencies** of the project and then runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+### Instructions
+
+- Once you are able to run the project. Simply hit
+
 ## Submission Checklists
 
 - [x] Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
@@ -87,3 +92,5 @@ npm install && npm run
 ### Bonus Checklist
 
 - [x] Parsing the query string on page load, or even returning some filtered data.
+
+
