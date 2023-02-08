@@ -52,16 +52,217 @@ const Home = () => {
         )
     }
 
+    // Algo -> Date and Speed has a boolean to be compared
+    // everytime, when you do a computation with Date-Variation of Speed
+    // Or Speed-Variaton of Date
+    const computeDateSpeed = (speedItem, dateItem, speedOperator, dateOperator) => {
+        let resultSpaceships = [];
+
+        const speedBool = (item) => {
+            let bool = false;
+            
+            if(speedOperator === '===') {
+                bool = speedItem === item.maximum_speed;
+
+                return bool;
+            }
+
+            if(speedOperator === '>') {
+                bool = speedItem > item.maximum_speed;
+
+                return bool;
+            }
+
+            if(speedOperator === '<') {
+                bool = speedItem < item.maximum_speed;
+
+                return bool;
+            }
+        }
+
+        const dateBool = (item) => {
+            let bool = false;
+            
+            if(dateOperator === '===') {
+                bool = dateItem === item.date_of_manufacture;
+
+                return bool;
+            }
+
+            if(dateOperator === '>') {
+                bool = dateItem > item.date_of_manufacture;
+
+                return bool;
+            }
+
+            if(dateOperator === '<') {
+                bool = dateItem < item.date_of_manufacture;
+
+                return bool;
+            }
+        }
+
+        // Params returns string, it is the best way to convert
+        // to bool
+        const hasLaserPulse = (params.has_pulse_laser === 'true');
+
+        resultSpaceships = spaceshipInfo.filter((item) => (
+            hasLaserPulse === item.has_pulse_laser 
+            && speedBool(item) && dateBool(item)
+        ))
+
+        return resultSpaceships;
+    }
+
+    const computeMaximumSpeed = (maximumSpeed, manufacturingDate) => {
+        let updatedArrayData = [];
+
+        // MAX SPEED & VARIABLE MANUFACTURING DATE
+        if(maximumSpeed.length === 1) {
+            // For Constant max speed, date comes with variations
+            // Like, before, after, and exact. So need to filter for each case
+            if(manufacturingDate.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[0], manufacturingDate[0], '===', '==='
+                );
+            }else {
+                if(manufacturingDate[0] === 'before') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[0], manufacturingDate[1], '===', '>'
+                    )
+                }
+
+                if(manufacturingDate[0] === 'after') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[0], manufacturingDate[1], '===', '<'
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+        
+        if(maximumSpeed.length > 1 && maximumSpeed[0] === 'below') {
+            if(manufacturingDate.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[1], manufacturingDate[0], '>', '==='
+                );
+            }else {
+                if(manufacturingDate[0] === 'before') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '>', '>'
+                    )
+                }
+
+                if(manufacturingDate[0] === 'after') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '>', '<'
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+
+        if(maximumSpeed.length > 1 && maximumSpeed[0] === 'above') {
+            if(manufacturingDate.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[1], manufacturingDate[0], '<', '==='
+                );
+            }else {
+                if(manufacturingDate[0] === 'before') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '<', '>'
+                    )
+                }
+
+                if(manufacturingDate[0] === 'after') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '<', '<'
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+
+        // VARIABLE SPEED AND MANUFACTURING DATE
+        if(manufacturingDate.length === 1) {
+            if(maximumSpeed.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[0], manufacturingDate[0], '===', '==='
+                );
+            }else {
+                if(maximumSpeed[0] === 'below') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[0], '>=', '==='
+                    )
+                }
+
+                if(maximumSpeed[0] === 'above') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[0], '<=', '==='
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+        
+        if(manufacturingDate.length > 1 && manufacturingDate[0] === 'before') {
+            if(maximumSpeed.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[0], manufacturingDate[1], '===', '>='
+                );
+            }else {
+                if(maximumSpeed[0] === 'below') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '>=', '>='
+                    )
+                }
+
+                if(maximumSpeed[0] === 'above') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '<=', '>='
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+
+        if(manufacturingDate.length > 1 && manufacturingDate[0] === 'after') {
+            if(maximumSpeed.length === 1) {
+                updatedArrayData = computeDateSpeed(
+                    maximumSpeed[0], manufacturingDate[1], '===', '<='
+                );
+            }else {
+                if(maximumSpeed[0] === 'below') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '>=', '<='
+                    )
+                }
+
+                if(maximumSpeed[0] === 'above') {
+                    updatedArrayData = computeDateSpeed(
+                        maximumSpeed[1], manufacturingDate[1], '<=', '<='
+                    )
+                }
+            }
+
+            return updatedArrayData;
+        }
+
+
+        return updatedArrayData;
+    }
+
     // This the the final filtering happening once we have all the data received 
     // from the Query URL params
     const computeFilterCards = () => {
         let maximumSpeed = [];
         let updatedArrayData = [];
         let manufacturingDate = [];
-
-        // Params returns string, it is the best way to convert
-        // to bool
-        const hasLaserPulse = (params.has_pulse_laser === 'true');
         
         // Maxium Speed logic
         if(params.maximum_speed.includes("-")){
@@ -83,58 +284,60 @@ const Home = () => {
         || params.colors.includes('none')
         || params.colors.includes('rgb')) {
             // Filter Logic here
-            if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
-                updatedArrayData = spaceshipInfo.filter((item) => (
-                    hasLaserPulse === item.has_pulse_laser 
-                    && maximumSpeed[0] === item.maximum_speed
-                    && manufacturingDate[0] === item.date_of_manufacture
-                ))
-            }else {
-                if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
-                    updatedArrayData = spaceshipInfo.filter((item) => (
-                        hasLaserPulse === item.has_pulse_laser 
-                        && maximumSpeed[1] <= item.maximum_speed
-                        && manufacturingDate[1] <= item.date_of_manufacture
-                    )) 
-                }
+            // if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
+            //     updatedArrayData = spaceshipInfo.filter((item) => (
+            //         hasLaserPulse === item.has_pulse_laser 
+            //         && maximumSpeed[0] === item.maximum_speed
+            //         && manufacturingDate[0] === item.date_of_manufacture
+            //     ))
+            // }else {
+            //     if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
+            //         updatedArrayData = spaceshipInfo.filter((item) => (
+            //             hasLaserPulse === item.has_pulse_laser 
+            //             && maximumSpeed[1] <= item.maximum_speed
+            //             && manufacturingDate[1] <= item.date_of_manufacture
+            //         )) 
+            //     }
 
-                if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
-                    updatedArrayData = spaceshipInfo.filter((item) => (
-                        hasLaserPulse === item.has_pulse_laser 
-                        && maximumSpeed[1] >= item.maximum_speed
-                        && manufacturingDate[1] >= item.date_of_manufacture
-                    ))
-                }
-            }
+            //     if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
+            //         updatedArrayData = spaceshipInfo.filter((item) => (
+            //             hasLaserPulse === item.has_pulse_laser 
+            //             && maximumSpeed[1] >= item.maximum_speed
+            //             && manufacturingDate[1] >= item.date_of_manufacture
+            //         ))
+            //     }
+            // }
+            updatedArrayData = 
+                computeMaximumSpeed(maximumSpeed, manufacturingDate);
 
             return <SpaceShipItemRender items={updatedArrayData} />
         }else {
-            if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
-                updatedArrayData = spaceshipInfo.filter((item) => (
-                    params.colors.includes(item.color[0]) 
-                    && hasLaserPulse === item.has_pulse_laser
-                    && maximumSpeed[0] === item.maximum_speed
-                    && manufacturingDate[0] === item.date_of_manufacture
-                ))
-            }else {
-                if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
-                    updatedArrayData = spaceshipInfo.filter((item) => (
-                        params.colors.includes(item.color[0]) 
-                        && hasLaserPulse === item.has_pulse_laser
-                        && maximumSpeed[1] <= item.maximum_speed
-                        && manufacturingDate[1] <= item.date_of_manufacture
-                    ))
-                }
+            // if(maximumSpeed.length === 1 && manufacturingDate.length === 1) {
+            //     updatedArrayData = spaceshipInfo.filter((item) => (
+            //         params.colors.includes(item.color[0]) 
+            //         && hasLaserPulse === item.has_pulse_laser
+            //         && maximumSpeed[0] === item.maximum_speed
+            //         && manufacturingDate[0] === item.date_of_manufacture
+            //     ))
+            // }else {
+            //     if(maximumSpeed[0] === 'above' && manufacturingDate[0] === 'after') {
+            //         updatedArrayData = spaceshipInfo.filter((item) => (
+            //             params.colors.includes(item.color[0]) 
+            //             && hasLaserPulse === item.has_pulse_laser
+            //             && maximumSpeed[1] <= item.maximum_speed
+            //             && manufacturingDate[1] <= item.date_of_manufacture
+            //         ))
+            //     }
 
-                if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
-                    updatedArrayData = spaceshipInfo.filter((item) => (
-                        params.colors.includes(item.color[0]) 
-                        && hasLaserPulse === item.has_pulse_laser
-                        && maximumSpeed[1] >= item.maximum_speed
-                        && manufacturingDate[1] >= item.date_of_manufacture
-                    ))
-                }
-            }
+            //     if(maximumSpeed[0] === 'below' && manufacturingDate[0] === 'before') {
+            //         updatedArrayData = spaceshipInfo.filter((item) => (
+            //             params.colors.includes(item.color[0]) 
+            //             && hasLaserPulse === item.has_pulse_laser
+            //             && maximumSpeed[1] >= item.maximum_speed
+            //             && manufacturingDate[1] >= item.date_of_manufacture
+            //         ))
+            //     }
+            // }
 
             return <SpaceShipItemRender items={updatedArrayData} />
         }
