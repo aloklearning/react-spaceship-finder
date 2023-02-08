@@ -18,7 +18,7 @@ Make sure you have the following installed in your system before you proceed to 
 
 ## Verification
 
-In case you would like to verify the above, please follow the below commands in your terminal. In case it is there, great! Else, you can install it by clicking on the following links in [here]():
+In case you would like to verify the above, please follow the below commands in your terminal. In case it is there, great! Else, you can install it by clicking on the following links in [here](https://github.com/aloklearning/react-spaceship-finder#links):
 
 **Important:** It is recommended you update your `npm` and `node`, for making use of lates features possible.
 
