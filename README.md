@@ -58,7 +58,7 @@ The project has been created to give the users the best experience possible. Her
 - The page comes with a **default filtered data** on the page load along with the same filters applied in the filter section.
 - A dedicated and interactive space for filtering which helps you do the filtering with ease and without hassle.
 
-## Running the Project 💻
+## Running the Project
 
 - Go to the project directory, you can run:
 
@@ -68,22 +68,22 @@ npm install && npm run
 
 - It will first install the **depenedencies** of the project and then runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Submission Checklists ✅
+## Submission Checklists
 
-- [x] Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
-- [x] Variations with the above filters:
-    - [x] **Colors:** All, Any of the selected colors, none of the selected colors.
-    - [x] **Maximum Speed:**
-        - [x] Less than, More than, Exactly
-        - [x] Maxium speed range check **(50-200)**
-    - [x] **Pulse Laser:** Has or Has Not
-    - [x] **Date of Manufacture:** 
-        - [x] After, Before, On the exact date
-        - [x] Date range check **(1980-2020)**
-- [x] Spaceship information being shown and real-time changes based upon the filter data
-- [x] Query string being generated and shown on the page. 
-- [x] Updating the filter updates the query string.
+✅ Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
+✅ Variations with the above filters:
+    ✅ **Colors:** All, Any of the selected colors, none of the selected colors.
+    ✅ **Maximum Speed:**
+        ✅ Less than, More than, Exactly
+        ✅ Maxium speed range check **(50-200)**
+    ✅ **Pulse Laser:** Has or Has Not
+    ✅ **Date of Manufacture:** 
+        ✅ After, Before, On the exact date
+        ✅ Date range check **(1980-2020)**
+✅ Spaceship information being shown and real-time changes based upon the filter data
+✅ Query string being generated and shown on the page. 
+✅ Updating the filter updates the query string.
 
-### Bonus Checklist ✅
+### Bonus Checklist
 
-- [x] Parsing the query string on page load, or even returning some filtered data.
+✅ Parsing the query string on page load, or even returning some filtered data.
