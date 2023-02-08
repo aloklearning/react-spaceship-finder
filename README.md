@@ -92,7 +92,7 @@ npm install && npm run
 - [x] Query string being generated and shown on the page. 
 - [x] Updating the filter updates the query string.
 - [x] Query string is API and page url sharing friendly. 
-- [x] **No 3rd party libraries/packages** has been **used** like **date picker**. The only 3rd party library has been used, which is [React Router DOM](https://www.npmjs.com/package/react-router-dom) being used for navigation.
+- [x] **No 3rd party libraries/packages** has been **used** like **date picker**. All the components has been made from scratch. The only 3rd party library has been used, which is [React Router DOM](https://www.npmjs.com/package/react-router-dom) being used for navigation.
 
 ### Bonus Checklist
 
