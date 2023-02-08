@@ -41,7 +41,7 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
     }
 
     return (
-        <div className='color-picker-container'>
+        <div className='options-container'>
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />
