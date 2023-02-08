@@ -166,7 +166,7 @@ const Home = () => {
                 className='show-all-btn filter-btn'
                 onClick={() => {}}
                 style={{margin: '30px 0 0 20px'}}>
-                    Show All Spaceship
+                    Show All Spaceships
                 </div>)}
             </div>
 
