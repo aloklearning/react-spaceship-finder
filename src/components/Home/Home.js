@@ -11,6 +11,13 @@ const Home = () => {
     
     const spaceshipInfo = require('../../assets/spaceships.json');
 
+    // ---- API CALLING SOLUTION ----
+    // useEffect(() => {
+        // DO API CALLING WITH QUERY PARAMS
+        // We can access prams data here as the params changes, and 
+        // then call the API with the data, as params.show_all etc
+    // }, [params])
+
     const EmptyContainer = () => {
         return(
             <h4>
