@@ -108,6 +108,7 @@ npm install && npm run
 - All filter selection based filtering, and not all. It helped me save some time. 
 - Test cases are not mandatory to be written in the assignment. 
 - Color can be selected as minimum as possible. It saved time in getting the filter to work quickly. Chosen only `red`, `green` and `blue`.
+- The project doesn't require hosting, as the requirement says, **upload your solution to a GitHub repo, and share the link with us**.
 
 ## Improvements
 
