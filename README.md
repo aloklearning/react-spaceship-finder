@@ -77,6 +77,7 @@ npm install && npm run
 
 ## Submission Checklists
 
+- [x] Project has to be kept private in a Github repository.
 - [x] Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
 - [x] Variations with the above filters:
     - [x] **Colors:** All, Any of the selected colors, none of the selected colors.
@@ -131,7 +132,6 @@ The project was quite challenging, considering the fact that the delivery has to
 ## Feedback
 
 There must be few bugs which will come while testing the app. I am open to feedback, as I firmly believe that a product becomes successful with the feedbacks. I will appreciate the time very much. Here is my email: `alokk830@gmail.com`
-
 
 
 ## FAQs
