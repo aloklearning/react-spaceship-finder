@@ -7,7 +7,7 @@
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the various options in a web application.
 - This project is **fully responsive** and has taken UI motivations from [PolyAI](https://poly.ai/) to give a feeling of belongingness to the PolyAI ecosystem.
 - The UI/UX implementations and strategiies are purely developer's ([Alok Kumar](https://github.com/aloklearning)) work and there is no way it has been copy-pasted from other website.
-- A very well illustrated demo has been provided [here](). Please do see that to know more about how the **app works**, and how it **looks like**.
+- A very well illustrated demo has been provided [here](https://github.com/aloklearning/react-spaceship-finder/blob/main/src/assets/github_resources/MrLittleZSearchingApp_Alok_Kumar_2023-02-08.pdf). Please do see that to know more about how the **app works**, and how it **looks like**.
 
 ## Pre-Requisites
 
