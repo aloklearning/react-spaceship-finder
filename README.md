@@ -1,6 +1,7 @@
 # React Spaceship Finder 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the given options on the web app.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to find the best spaceship from the given options on the web app.
+- This project is fully responsive and has taken UI motivations from [PolyAI](https://poly.ai/) to give a feeling of belonging to the PolyAI ecosystem.
 
 ## Available Scripts
 
