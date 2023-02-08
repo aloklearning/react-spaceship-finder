@@ -151,6 +151,10 @@ I took close to `3 days`. It was given on `Friday, Feb 3rd 2023`, and it was sub
 - The `rgb` stands for `red`, `green` and `blue`. And individual represents the same color.
 - This has been implemented to get the best results in the filtering. 
 
+## License
+
+This project is licensed under the MIT licence - see the [LICENCE](https://github.com/aloklearning/react-spaceship-finder/blob/main/LICENCE) for more details.
+
 ## Links
 
 - [React Official Website](https://reactjs.org/)
