@@ -10,6 +10,7 @@ const Home = () => {
     const [urlQueries, setURLQueries] = useSearchParams();
     const params = Object.fromEntries([...urlQueries]);
     
+    
     const spaceshipInfo = require('../../assets/spaceships.json');
 
     // ---- API CALLING SOLUTION ----

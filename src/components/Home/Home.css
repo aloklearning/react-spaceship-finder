@@ -19,18 +19,22 @@
 }
 
 .query-string-container {
+  color: white;
   display: block;
-  font-size: 0.6em;
-  color: #34e2e2;
+  font-size: 0.83em;
   margin-top: 20px;
   padding: 10px 2%;
   border-radius: 8px;
-  background-color: black;
+  background-color: #3e3e67;
   box-shadow: 4px 8px 12px rgb(0 0 0 / 20%);
 }
 
 @media screen and (min-width: 1200px) {
     .home-container {
         padding: 10% 17%;
+    }
+
+    .query-string-container {
+      font-size: 0.6em;
     }
 }
