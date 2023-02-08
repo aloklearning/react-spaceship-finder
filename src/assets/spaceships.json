@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "color": "red",
+        "maximum_speed": 200,
+        "has_pulse_laser": true,
+        "date_of_manufacture": "2020/02/13"
+    },
+    {
+        "id": 2,
+        "color": "blue",
+        "maximum_speed": 50,
+        "has_pulse_laser": false,
+        "date_of_manufacture": "1981/02/12"
+    },
+    {
+        "id": 3,
+        "color": "green",
+        "maximum_speed": 100,
+        "has_pulse_laser": true,
+        "date_of_manufacture": "2018/07/13"
+    },
+    {
+        "id": 4,
+        "color": "red",
+        "maximum_speed": 70,
+        "has_pulse_laser": false,
+        "date_of_manufacture": "2018/02/13"
+    },
+    {
+        "id": 5,
+        "color": "green",
+        "maximum_speed": 120,
+        "has_pulse_laser": true,
+        "date_of_manufacture": "2020/12/13"
+    },
+    {
+        "id": 6,
+        "color": "blue",
+        "maximum_speed": 150,
+        "has_pulse_laser": true,
+        "date_of_manufacture": "2017/08/15"
+    },
+    {
+        "id": 7,
+        "color": "green",
+        "maximum_speed": 65,
+        "has_pulse_laser": false,
+        "date_of_manufacture": "2012/08/15"
+    },
+    {
+        "id": 8,
+        "color": "red",
+        "maximum_speed": 180,
+        "has_pulse_laser": true,
+        "date_of_manufacture": "2018/02/13"
+    },
+    {
+        "id": 9,
+        "color": "red",
+        "maximum_speed": 95,
+        "has_pulse_laser": false,
+        "date_of_manufacture": "2011/01/01"
+    },
+    {
+        "id": 10,
+        "color": "blue",
+        "maximum_speed": 55,
+        "has_pulse_laser": false,
+        "date_of_manufacture": "2000/05/26"
+    }
+]
