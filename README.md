@@ -70,20 +70,20 @@ npm install && npm run
 
 ## Submission Checklists
 
-✅ Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
-✅ Variations with the above filters:
-    ✅ **Colors:** All, Any of the selected colors, none of the selected colors.
-    ✅ **Maximum Speed:**
-        ✅ Less than, More than, Exactly
-        ✅ Maxium speed range check **(50-200)**
-    ✅ **Pulse Laser:** Has or Has Not
-    ✅ **Date of Manufacture:** 
-        ✅ After, Before, On the exact date
-        ✅ Date range check **(1980-2020)**
-✅ Spaceship information being shown and real-time changes based upon the filter data
-✅ Query string being generated and shown on the page. 
-✅ Updating the filter updates the query string.
+- [x] Filtering based on **Colors**, **Maximum Speed**, **Pulse Laser** and **Date of Manufacture**.
+- [x] Variations with the above filters:
+    - [x] **Colors:** All, Any of the selected colors, none of the selected colors.
+    - [x] **Maximum Speed:**
+        - [x] Less than, More than, Exactly
+        - [x] Maxium speed range check **(50-200)**
+    - [x] **Pulse Laser:** Has or Has Not
+    - [x] **Date of Manufacture:** 
+        - [x] After, Before, On the exact date
+        - [x] Date range check **(1980-2020)**
+- [x] Spaceship information being shown and real-time changes based upon the filter data
+- [x] Query string being generated and shown on the page. 
+- [x] Updating the filter updates the query string.
 
 ### Bonus Checklist
 
-✅ Parsing the query string on page load, or even returning some filtered data.
+- [x] Parsing the query string on page load, or even returning some filtered data.
