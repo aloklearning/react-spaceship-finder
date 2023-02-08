@@ -232,7 +232,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[0], 
-                        '>=', '==='
+                        '>', '==='
                     )
                 }
 
@@ -241,7 +241,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[0], 
-                        '<=', '==='
+                        '<', '==='
                     )
                 }
             }
@@ -255,7 +255,7 @@ const Home = () => {
                     withColorFilter, 
                     maximumSpeed[0], 
                     manufacturingDate[1], 
-                    '===', '>='
+                    '===', '>'
                 );
             }else {
                 if(maximumSpeed[0] === 'below') {
@@ -263,7 +263,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[1], 
-                        '>=', '>='
+                        '>', '>'
                     )
                 }
 
@@ -272,7 +272,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[1], 
-                        '<=', '>='
+                        '<', '>'
                     )
                 }
             }
@@ -286,7 +286,7 @@ const Home = () => {
                     withColorFilter, 
                     maximumSpeed[0], 
                     manufacturingDate[1], 
-                    '===', '<='
+                    '===', '<'
                 );
             }else {
                 if(maximumSpeed[0] === 'below') {
@@ -294,7 +294,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[1], 
-                        '>=', '<='
+                        '>', '<'
                     )
                 }
 
@@ -303,7 +303,7 @@ const Home = () => {
                         withColorFilter, 
                         maximumSpeed[1], 
                         manufacturingDate[1], 
-                        '<=', '<='
+                        '<', '<'
                     )
                 }
             }
