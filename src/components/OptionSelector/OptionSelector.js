@@ -33,15 +33,15 @@ const OptionSelector = ({ paramsObject, setParamsObject }) => {
         // Changing the query string to the updated data from the form
         setParamsObject({
             show_all: false,
+            colors: colorParam.length > 0 ? colorParam : 'none',
             maximum_speed: maximumSpeedItem.current,
             has_pulse_laser: hasPulseLaserItem.current,
             date_of_manufacture: dateOfManufactureItem.current,
-            colors: colorParam.length > 0 ? colorParam : 'none'
         })
     }
 
     return (
-        <div className='color-picker-container'>
+        <div className='options-container'>
             <h3>Your Options</h3>
             <ColorPickerItem colorItems={colorItems} paramsObject={paramsObject} />
             <SpeedContainer maximumSpeedItem={maximumSpeedItem} paramsObject={paramsObject} />

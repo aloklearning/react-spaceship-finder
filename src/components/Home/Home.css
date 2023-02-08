@@ -3,23 +3,39 @@
 }
 
 .show-all-btn {
-    cursor: pointer;
-    color: #fd6b6e;
-    text-align: center;
-    padding: 10px 10px;
-    display: inline-block;
-    text-decoration: none;
-    border: 2px solid #fd6b6e;
-    background-color: transparent;
-  }
-  
-  .show-all-btn:hover {
-    color: aliceblue;
-    background-color: #fd6b6e;
-  }
+  cursor: pointer;
+  color: #fd6b6e;
+  text-align: center;
+  padding: 10px 10px;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #fd6b6e;
+  background-color: transparent;
+}
+
+.show-all-btn:hover {
+  color: aliceblue;
+  background-color: #fd6b6e;
+}
+
+.query-string-container {
+  color: white;
+  font-size: 0.83em;
+  margin-top: 20px;
+  padding: 10px 2%;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  word-wrap: break-word;
+  background-color: #3e3e67;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 25%);
+}
 
 @media screen and (min-width: 1200px) {
     .home-container {
         padding: 10% 17%;
+    }
+
+    .query-string-container {
+      font-size: 0.6em;
     }
 }
