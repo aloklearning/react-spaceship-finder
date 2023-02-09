@@ -66,7 +66,7 @@ The project has been created to give the users the best experience possible. Her
 - Go to the project directory, you can run:
 
 ```bash
-npm install && npm run
+npm install && npm start
 ```
 
 - It will first install the **depenedencies** of the project and then runs the app in the **development** mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
