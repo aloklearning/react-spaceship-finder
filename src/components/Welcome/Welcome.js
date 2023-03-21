@@ -26,11 +26,11 @@ const Welcome = () => {
             </div>
             
             <div className='content-container'>
-                <h1>Finding Spacecraft for Mr Little Z</h1>
+                <h1>Finding Spacecraft</h1>
                 
                 <p className='sub-header'>
-                Mr Little Z has multiple spaceships in his spaceport, and he finds it hard to keep track of them.
-                We are helping him to sort this problem out so that he can go to his work without any problem. 
+                We have  multiple spaceships in our spaceport, and it is hard to keep track of them.
+                We are helping you to sort this problem out so that you can go to his work without any problem. 
                 </p>
 
                 <Link to={{pathname: '/home'}} state={params} className='btn'>
